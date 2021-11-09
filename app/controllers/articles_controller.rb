@@ -43,6 +43,6 @@ class ArticlesController < ApplicationController
 
   private
   	def article_params
-  		params.require(:article).permit(:hidline)
+  		params.require(:article).permit(:hidline,:content)
   	end
 end
