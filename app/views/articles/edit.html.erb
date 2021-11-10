@@ -9,6 +9,11 @@
 				<%= f.label :content %>
     			<%= f.rich_text_area :content %>
     			<br>
+    			<%=f.fields_for :article_tags do |builder|%>
+					<%= builder.label :Tags %>
+					<%= builder.text_field :tag,class:"form-group form-control"%>
+				<% end %>
+				<br>
 				<%= f.submit  class:"form-control btn btn-primary" %>
 			<% end %>
 			<%=link_to "Back",articles_path,class:"nav-link" %>
