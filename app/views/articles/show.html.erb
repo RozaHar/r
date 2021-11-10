@@ -4,6 +4,13 @@
 			<%=link_to "Back",articles_path,class:"nav-link" %>
 			<h1><%=@article.hidline %></h1>
 			<p><%=@article.content %></p>
+			<p>
+				<% @article.article_tags.each do |article_tag| %>
+				
+					<p class="text-info"><%= article_tag.tag %></p>
+					
+				<% end %>
+			</p>
 			<p><%=@article.created_at %></p>
 		</div>
 	</div>

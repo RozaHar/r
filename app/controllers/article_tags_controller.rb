@@ -1,0 +1,3 @@
+class ArticleTagsController < ApplicationController
+		
+end
