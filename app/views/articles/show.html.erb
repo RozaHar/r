@@ -10,6 +10,21 @@
 				<% end %>
 			</p>
 			<p><%=@article.created_at %></p>
+			<hr>
+			<h2>Comments</h2>
+			<%= form_for([@article,@article.comments.build]) do |f| %>
+				<div class="form-group">
+					<strong><%= f.label :content %></strong>	
+    				<%= f.text_area :content,class:"form-group form-control"%>
+				</div>
+				<div class="form-group">
+					<%= f.submit  class:"form-control btn btn-primary" %>
+				</div>
+			<% end %>
+			<% @article.comments.each do |comment| %>
+				<p><strong><%= comment.content %></p></strong>	
+				<hr>
+			<% end %>
 		</div>
 	</div>
 </div>		
