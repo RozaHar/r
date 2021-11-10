@@ -2,16 +2,16 @@
 	<div class="row">
 		<div class="col-md-8 mx-auto">
 			<h1>Articles</h1>
-			<%=link_to "New",new_article_path, class:"nav-link"%>
+			<%=link_to "New",new_article_path, class:"nav-link btn btn-primary form-control"%>
 			<br>
 			<%@articles.each do |article|%>
 				<hr>
 				<h1><%=article.hidline %></h1>
 				<p><%=article.content %></p> 
 				<p><%=article.created_at %></p> 
-				<p><%=link_to "Edit",edit_article_path(article), class:"nav-link"%></p>
-				<p><%=link_to "Show",article_path(article), class:"nav-link"%></p>
-				<p><%=button_to "Delete",article_path(article), class:"nav-link",method: :delete%></p>
+				<p><%=link_to "Edit",edit_article_path(article), class:"nav-link btn btn-success "%></p>
+				<p><%=link_to "Show",article_path(article), class:"nav-link  btn btn-secondary"%></p>
+				<p><%=button_to "Delete",article_path(article), class:"nav-link btn btn-dark form-control",method: :delete%></p>
 				<hr>
 			<% end %>
 		</div>
