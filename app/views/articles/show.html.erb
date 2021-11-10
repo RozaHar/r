@@ -1,14 +1,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 mx-auto">
-			<%=link_to "Back",articles_path,class:"nav-link" %>
+			<%=link_to "Back",articles_path,class:"nav-link form-control btn btn-dark" %>
 			<h1><%=@article.hidline %></h1>
 			<p><%=@article.content %></p>
 			<p>
 				<% @article.article_tags.each do |article_tag| %>
-				
-					<p class="text-info"><%= article_tag.tag %></p>
-					
+					<p ><%=article_tag.tag %></p>
 				<% end %>
 			</p>
 			<p><%=@article.created_at %></p>

@@ -1,23 +1,31 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 mx-auto">
-			<h1>New Article</h1>
+			<h1 class="text-center text-danger">New Article</h1>
 			<%=form_for @article do |f|%>
-				<%= f.label :hidline %>
-				<%= f.text_field :hidline,class:"form-group form-control" %>
+				<div class="form-group">
+					<strong><%= f.label :hidline %></strong>	
+					<%= f.text_field :hidline,class:"form-group form-control" %>
+				</div>
 				<br>
-				<%= f.label :content %>
-    			<%= f.rich_text_area :content %>
+				<div class="form-group">
+					<strong><%= f.label :content %></strong>	
+    				<%= f.rich_text_area :content %>
+				</div>
     			<br>
-    			<%=f.fields_for :article_tags do |builder|%>
-					<%= builder.label :Tags %>
-					<%= builder.text_field :tag,class:"form-group form-control"%>
-				<% end %>
+    			<div class="form-group">
+    				<%=f.fields_for :article_tags do |builder|%>
+    				<strong><%=builder.label :Tags %></strong>
+						<%= builder.text_field :tag,class:"form-group form-control"%>
+					<% end %>
+    			</div>
 				<br>
-				<%= f.submit  class:"form-control btn btn-primary" %>
+				<div class="form-group">
+					<%= f.submit  class:"form-control btn btn-primary" %>
+				</div>
 			<% end %>
 			<br>
-			<%=link_to "Back",articles_path,class:"nav-link" %>
+			<%=link_to "Back",articles_path,class:"nav-link form-control btn btn-dark" %>
 		</div>
 	</div>
 </div>		
