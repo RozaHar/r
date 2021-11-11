@@ -31,3 +31,7 @@
 
 en:
   hello: "Hello world"
+  article:
+    create: "Create this article"
+    destroy: "Delete this article"
+    update: "Update this article"
