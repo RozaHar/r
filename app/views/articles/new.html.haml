@@ -1,0 +1,29 @@
+.container
+  .row
+    .col-md-8.mx-auto
+      %h1.text-center.text-danger New Article
+      - if @article.errors.any?
+        %br/
+        %ul.alert-danger
+          - @article.errors.each do |error|
+            %li= error.full_message
+            %br/
+        %br/
+      = form_for @article do |f|
+        .form-group
+          %strong= f.label :hidline
+          = f.text_field :hidline,class:"form-group form-control"
+        %br/
+        .form-group
+          %strong= f.label :content
+          = f.rich_text_area :content,class:"form-group form-control"
+        %br/
+        .form-group
+          = f.fields_for :article_tags do |builder|
+            %strong= builder.label :Tags
+            = builder.text_field :tag,class:"form-group form-control"
+        %br/
+        .form-group
+          = f.submit  class:"form-control btn btn-primary"
+      %br/
+      = link_to "Back",articles_path,class:"nav-link form-control btn btn-dark"
