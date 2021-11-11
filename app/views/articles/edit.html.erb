@@ -2,6 +2,16 @@
 	<div class="row">
 		<div class="col-md-8 mx-auto">
 			<h1 class="text-center text-danger">Edit Article</h1>
+			<% if @article.errors.any?%>
+			<br>
+			<ul class="alert-danger">
+				<% @article.errors.each do |error| %>
+					<li><%= error.full_message %></li>
+					<br>	
+				<% end %>
+			</ul>
+			<br>
+			<% end %>
 			<%=form_for @article do |f|%>
 				<div class="form-group">
 					<strong><%= f.label :hidline %></strong>	
